@@ -168,7 +168,7 @@ class CUSTOM_UL_items(UIList):
 class CUSTOM_PT_objectList(Panel):
     """Adds a custom panel to the TEXT_EDITOR"""
     bl_label = "UIList Test"
-    bl_idname = "UIListTest_PT_uilisttest"
+    bl_idname = "uilisttest_PT_uilisttest"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = 'Blender_UIList'
@@ -223,7 +223,7 @@ def register():
     for cls in classes:
         bpy.utils.register_class(cls)
 
-    bpy.types.Scene.my_tool = bpy.props.PointerProperty(type=BMNFTS_PGT_MyProperties)
+    # bpy.types.Scene.my_tool = bpy.props.PointerProperty(type=BMNFTS_PGT_MyProperties)
 
     # UIList:
     bpy.types.Scene.custom = bpy.props.CollectionProperty(type=CUSTOM_PG_objectCollection)
@@ -233,7 +233,7 @@ def unregister():
     for cls in classes:
         bpy.utils.unregister_class(cls)
 
-    del bpy.types.Scene.my_tool
+    # del bpy.types.Scene.my_tool
 
     # UIList:
     del bpy.types.Scene.custom
